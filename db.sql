@@ -1,3 +1,15 @@
+-- -- -------------------------------------------------------------------------------
+-- -- Zadanie DB
+-- -- -------------------------------------------------------------------------------
+
+-- -- -------------------------------------------------------------------------------
+-- Section: setting sql_mode
+-- -- -------------------------------------------------------------------------------
+SET sql_mode = 'ONLY_FULL_GROUP_BY,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+--
+-- Current Database: `wsb_db`
+--
 CREATE TABLE Employee (
     id SERIAL PRIMARY KEY,
     first_name VARCHAR(255) NOT NULL,
@@ -111,3 +123,9 @@ CREATE TABLE FinalGrade (
     UNIQUE (student_id, subject_id)
 );
 
+-- -- -------------------------------------------------------------------------------
+-- Section: USE
+-- -- -------------------------------------------------------------------------------
+DROP SCHEMA IF EXISTS wsb_db;
+CREATE SCHEMA wsb_db DEFAULT CHARACTER SET UTF8MB4;
+USE wsb_db;
